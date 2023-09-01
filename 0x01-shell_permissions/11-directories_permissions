@@ -1,3 +1,3 @@
 #!/bin/bash
-find . -type d -execdir chmod a+x {} +
+find . -type d -exec chmod a+rx {} + \
 
