@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Bash Script that displays the content of file /etc/passwd using while loop + IFS.
+passwd_file="/etc/passwd"
+
+# Check if the file exists
+if [ -f "$passwd_file" ]; then
+    # Using a while loop to read and display usernamme userid and home directory path for the user
+    while IFS=: read -r username _ userid passwd useridinfo groupid _ home_dir shell
+    do
+        # Extracting the users command shell from the full path
+        cmd=$(basename "$shell")
+
+        # Displaying information in the specified format
+        echo "The user $username is part of the $groupid gang, lives in $home_dir and rides $cmd."
+        echo "$userid place is protected by the passcode $passwd, more info about the user here: $useridinfo"
+    done < "$passwd_file"
+else
+    echo "/etc/passwd does not exist!"
+fi
