@@ -42,3 +42,6 @@ In the end to get data you want right to YOU, it comes down to addresses, specif
 
 IP Addresses
 Every machine on the internet has a unique number assigned to it. Its called IP Address. 
+
+UDP and TCP
+TCP/IP is a suite of protocols used by devices to communicate over the internet and most local networks. TCP provides  apps way to deliver(and receive) an ordered and error checked stream of information packets over the network. The User Datagram Protocol(UDP) is used by apps to deliver a faster stream of information by doing away with error-checking
