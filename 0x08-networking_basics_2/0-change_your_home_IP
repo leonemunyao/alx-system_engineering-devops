@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Bash script to configure hosts file on an Ubuntu server
+
+# Check if running in Docker
+if [ -f "/.dockerenv" ]; then
+    echo "Running in Docker"
+else
+    echo "This script is intended to run inside a Docker container. Exiting."
+    exit 1
+fi
+
+# Add or update entries in /etc/hosts file
+echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts
+echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts
+
+echo "Host configuration completed."
