@@ -35,3 +35,10 @@ WAN(Wide Area  Network)
 Connects devices across large distances using multiple technologies. Residents basically employ LAN and connect to the internet WAN through an Internet Service Provider(ISP) using a broadband modem. The ISP provides a WAN IP address (also called private IP address). All computers in a home LAN can communicate directly with each other but must go through a central network gateway, typiically a broadband router, to reach the ISP and beyond.
 
 LAN connect local devices together, WAN connects LANs together and WAN's are operating over the Internet.
+
+
+MAC Address and IP Address
+In the end to get data you want right to YOU, it comes down to addresses, specifically IP Address. A Media Access Control Address is a string of characters that identifies a device on a network. Its tied to a key connection device called the Network Interface Card. All devices in the same netwwork subnet have different MAC Addresses.
+
+IP Addresses
+Every machine on the internet has a unique number assigned to it. Its called IP Address. 
