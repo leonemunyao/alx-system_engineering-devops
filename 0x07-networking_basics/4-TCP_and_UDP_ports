@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Display listening ports with PID and program name
+
+echo "Listening Ports:"
+
+# Use netstat to display listening sockets, filter with grep
+# -t: Display TCP ports
+# -l: Display only listening sockets
+# -n: Show numerical addresses
+# -p: Show PID and name
+netstat -tlnp 2>/dev/null | grep LISTEN | awk '{print "Port: "$4"\tPID: "$7"\tProgram: "$NF}'
