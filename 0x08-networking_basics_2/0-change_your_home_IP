@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Bash script to configure hosts file on an Ubuntu server
 
 # Check if running in Docker

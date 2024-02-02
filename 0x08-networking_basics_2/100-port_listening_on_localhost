@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# Bash Script that listens to port 98 on localhost
 if ! command -v nc &> /dev/null; then
     exit 1
 fi
