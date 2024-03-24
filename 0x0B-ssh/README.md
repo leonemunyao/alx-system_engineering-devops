@@ -203,3 +203,7 @@ Directory: 0x0B-ssh
 
 
 
+
+SSH Essentials: Working with SSH Servers,Clients and Keys
+
+SSH is a secure protocal used as the primary means of connecting to Linux servers remotely. After connecting, all commands you type in your local terminal are send to the remote server and executed there. Lets check some of the ways of connecting with SSH to achieve your objective 
