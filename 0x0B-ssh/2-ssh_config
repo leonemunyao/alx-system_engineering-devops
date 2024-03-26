@@ -1,1 +1,5 @@
 #!/usr/bin/env bash
+# Configure the SSH client to use the private key ~/.ssh/school for the server
+Host *
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
