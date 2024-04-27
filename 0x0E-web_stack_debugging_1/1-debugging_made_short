@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Stops and starts the nginx service
 service nginx stop
 service nginx start
 service nginx status | grep -q "nginx is not running"
