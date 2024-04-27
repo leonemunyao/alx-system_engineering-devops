@@ -1,0 +1,5 @@
+#!/bin/bash
+
+service nginx stop
+service nginx start
+service nginx status | grep -q "nginx is not running"
