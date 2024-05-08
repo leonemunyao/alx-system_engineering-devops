@@ -21,7 +21,7 @@ sed -i 's/listen 80;/listen 0.0.0.0:80;/g' /etc/nginx/sites-available/default
 # Check if any other service is running on port 80, if yes, stop it.
 if lsof -Pi :80 -sTCP:LISTEN -t
 then
-    service $(lsof -Pi :80 -sTCP:LISTEN -t | awk '{print $1}') stop
+    service "$(lsof -Pi :80 -sTCP:LISTEN -t | awk '{print $1}')" stop
 fi
 
 # Check if firewall is blocking port 80, if yes, allow it.
