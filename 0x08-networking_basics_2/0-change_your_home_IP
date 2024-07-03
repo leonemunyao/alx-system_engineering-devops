@@ -5,7 +5,6 @@
 if [ -f "/.dockerenv" ]; then
     echo "Running in Docker"
 else
-    echo "This script is intended to run inside a Docker container. Exiting."
     exit 1
 fi
 
