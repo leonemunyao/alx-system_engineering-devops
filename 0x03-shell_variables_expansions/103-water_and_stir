@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%o\n" $(( $(echo "$WATER" | tr 'water' '01234' | grep -o . | awk '{a[NR-1]=$1} END {for (i=NR-1; i>=0; i--) s+=a[i]*5^(NR-1-i); print s}') + $(echo "$STIR" | tr 'stir.' '01234' | grep -o . | awk '{a[NR-1]=$1} END {for (i=NR-1; i>=0; i--) s+=a[i]*5^(NR-1-i); print s}') )) | tr '01234567' 'bestchol'
+echo $(($WATER+$STIR)) > bestchol
