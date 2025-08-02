@@ -1,2 +1,65 @@
 #!/bin/bash
-echo $(($WATER+$STIR)) > bestchol
+
+# Bases
+base_water="water"
+base_stir="stir."
+base_bestchol="bestchol"
+
+# Function to convert from base-N to decimal
+# Function to convert from base-N to decimal
+base_to_decimal() {
+  local input="$1"
+  local base_str="$2"
+  local base_len=${#base_str}
+  local decimal=0
+
+  # Only allow characters from base_str
+  # For STIR base, don't filter - keep all characters as they might include '.'
+  if [ "$base_str" = "stir." ]; then
+    input="$input"
+  else
+    input=$(echo "$input" | grep -o . | grep -E "[$base_str]" | tr -d '\n')
+  fi
+
+  local i=0
+  while [ $i -lt ${#input} ]; do
+    char=${input:$i:1}
+    digit=$(expr index "$base_str" "$char")
+    digit=$((digit - 1)) # expr index starts at 1
+    decimal=$((decimal * base_len + digit))
+    i=$((i + 1))
+  done
+  echo "$decimal"
+}
+
+
+# Function to convert decimal to base-N using given digit set
+decimal_to_base() {
+  local number=$1
+  local base_str="$2"
+  local base_len=${#base_str}
+  local result=""
+  if [ "$number" -eq 0 ]; then
+    echo "${base_str:0:1}"
+    return
+  fi
+  while [ "$number" -gt 0 ]; do
+    digit=$((number % base_len))
+    result="${base_str:$digit:1}$result"
+    number=$((number / base_len))
+  done
+  echo "$result"
+}
+
+# Read environment variables
+dec1=$(base_to_decimal "$WATER" "$base_water")
+dec2=$(base_to_decimal "$STIR" "$base_stir")
+
+# Sum them
+sum=$((dec1 + dec2))
+
+# Convert sum to base_bestchol
+result=$(decimal_to_base "$sum" "$base_bestchol")
+
+# Output
+echo "$result"
