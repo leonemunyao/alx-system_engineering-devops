@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -f -v "$m" "$2" done | sort -u
+paste - - | cut -f1
